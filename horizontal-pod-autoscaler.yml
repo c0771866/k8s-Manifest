@@ -23,11 +23,11 @@ spec:
             containerPort: 80
           resources:
             requests:
-              cpu: "100m"
-              memory: "64Mi"
+              cpu: "32m"
+              memory: "32Mi"
             limits:
-              cpu: "100m"
-              memory: "256Mi"
+              cpu: "32m"
+              memory: "64Mi"
 ---
 apiVersion: v1
 kind: Service
@@ -52,7 +52,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: hpadeployment
-  minReplicas: 2
+  minReplicas: 1
   maxReplicas: 5
   metrics:
     - resource:
