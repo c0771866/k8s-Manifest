@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -55,7 +54,9 @@ spec:
   minReplicas: 1
   maxReplicas: 5
   metrics:
-    - resource:
-        name: cpu
-        targetAverageUtilization: 50
-      type: Resource
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
